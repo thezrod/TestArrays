@@ -76,6 +76,13 @@ public class Controller implements Initializable {
         route1.add("Nordstan");
         route1.add("Brunnsparken");
     }
+    private ArrayList<String> reverseRoute(ArrayList<String> route){
+        ArrayList<String> reversedList = new ArrayList<>();
+        for(int i = (route.size()-1);i>=0;i--){
+            reversedList.add(route.get(i));
+        }
+        return reversedList;
+    }
     @FXML
     private TextArea textArea;
 
@@ -86,8 +93,11 @@ public class Controller implements Initializable {
         for(String s : route1){
             textArea.setText(textArea.getText()+"\n"+s);
         }
-        ArrayList<LocalTime> test = getCurrentTable(LocalTime.now());
-        /**ArrayList<LocalTime> test = getCurrentTable(LocalTime.of(0,55));*/
+        for(String s: reverseRoute(route1)) {
+            textArea.setText(textArea.getText()+"\n"+s);
+        }
+        /**ArrayList<LocalTime> test = getCurrentTable(LocalTime.now());*/
+        ArrayList<LocalTime> test = getCurrentTable(LocalTime.of(0,55));
         for(LocalTime localTime : test) {
             textArea.setText(textArea.getText() + "\n" + localTime);
         }
