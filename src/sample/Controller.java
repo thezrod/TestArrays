@@ -86,14 +86,8 @@ public class Controller implements Initializable {
         for(String s : route1){
             textArea.setText(textArea.getText()+"\n"+s);
         }
-       /* for(LocalTime lt: ekeTime){
-            textArea.setText(textArea.getText()+"\n"+lt);
-        }*/
-        /**ArrayList<LocalTime> test = getCurrentTable(LocalTime.now());
-        for(LocalTime localTime : test) {
-            textArea.setText(textArea.getText() + "\n" + localTime);
-        }*/
-        ArrayList<LocalTime> test = getCurrentTable(LocalTime.of(0,26));
+        ArrayList<LocalTime> test = getCurrentTable(LocalTime.now());
+        /**ArrayList<LocalTime> test = getCurrentTable(LocalTime.of(0,55));*/
         for(LocalTime localTime : test) {
             textArea.setText(textArea.getText() + "\n" + localTime);
         }
